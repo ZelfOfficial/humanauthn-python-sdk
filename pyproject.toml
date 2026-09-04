@@ -1,0 +1,73 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "humanauthn"
+version = "0.1.0"
+description = "Official Python SDK for HumanAuthn (by Verifik)"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.9"
+authors = [{ name = "Zelf / Verifik" }]
+keywords = ["humanauthn", "verifik", "biometrics", "authentication", "humanid"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Security",
+    "Typing :: Typed",
+]
+dependencies = ["httpx>=0.27"]
+
+[project.urls]
+Homepage = "https://github.com/ZelfOfficial/humanauthn-python-sdk"
+Repository = "https://github.com/ZelfOfficial/humanauthn-python-sdk"
+Issues = "https://github.com/ZelfOfficial/humanauthn-python-sdk/issues"
+Documentation = "https://docs.verifik.co/biometrics/humanauthn/"
+
+[project.optional-dependencies]
+dev = [
+    "ruff>=0.8",
+    "mypy>=1.13",
+    "pytest>=8",
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.8",
+    "mypy>=1.13",
+    "pytest>=8",
+]
+
+[tool.hatch.build.targets.sdist]
+exclude = [
+    "/examples/integrations",
+]
+
+[tool.ruff]
+target-version = "py39"
+src = ["src", "tests", "examples"]
+exclude = ["examples/integrations"]
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.mypy]
+strict = true
+python_version = "3.10"
+mypy_path = "src:examples"
+files = ["src/humanauthn", "tests", "examples"]
+exclude = "(^|/)examples/integrations/"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

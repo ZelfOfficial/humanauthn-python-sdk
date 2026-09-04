@@ -1,0 +1,8 @@
+{
+  "name": "humanauthn-python-sdk",
+  "user": "ubuntu",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "install": "uv sync --all-extras --dev"
+}
