@@ -1,6 +1,6 @@
 # humanauthn-python-sdk
 
-Python SDK for the online (HTTP API) version of
+Official Python SDK for the online (HTTP API) version of
 [HumanAuthn](https://docs.verifik.co/biometrics/humanauthn/) by Verifik.
 
 HumanAuthn is an authentication + encryption primitive that turns a live
