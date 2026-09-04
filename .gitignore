@@ -1,0 +1,36 @@
+# Build / tooling
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+dist/
+build/
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+.coverage
+coverage/
+htmlcov/
+.venv/
+venv/
+
+# Local biometric test images must never be committed (privacy: face data).
+# Keep your own selfies under fixtures/ (git-ignored).
+fixtures/
+*.jpg
+*.jpeg
+*.png
+*.webp
+*.heic
+
+# Exception: the bundled, AI-generated sample face used by the examples
+# (synthetic, not a real person; licensed for testing).
+!examples/faces/generated-test-face.jpg
+
+*.log
+.env
+.env.*
+!.env.example
+.DS_Store
+.uv/
