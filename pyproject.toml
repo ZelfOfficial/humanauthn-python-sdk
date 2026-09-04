@@ -58,6 +58,9 @@ src = ["src", "tests", "examples"]
 exclude = ["examples/integrations"]
 line-length = 100
 
+[tool.ruff.format]
+exclude = ["*.md", "examples/integrations"]
+
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP", "B"]
 
